@@ -8,7 +8,7 @@
 	];
 </script>
 
-<div>
+<div class="container">
 	<div>
 		<h2>Download the extension</h2>
 		<p>
@@ -16,9 +16,16 @@
 			like us to prioritize.
 		</p>
 	</div>
-	<div>
+	<div class="card-container">
 		{#each extensions as extension}
 			<ExtensionCard {...extension} />
 		{/each}
 	</div>
 </div>
+
+<style>
+	.container {
+		margin-top: 4.8125rem;
+		text-align: center;
+	}
+</style>

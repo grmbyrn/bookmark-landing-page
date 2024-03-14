@@ -26,7 +26,9 @@
 	}
 
 	.burger {
-		border: 1px solid red;
+		border: none;
+		background-color: transparent;
+		cursor: pointer;
 	}
 
 	@media only screen and (min-width: 1200px) {

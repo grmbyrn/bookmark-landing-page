@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Button from './Button.svelte';
+
 	let buttonText: string = 'Bookmark in one click';
 	let paragraphText: string =
 		'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.';
@@ -30,15 +32,15 @@
 	}
 </script>
 
-<div>
+<div class="container">
 	<div>
-		<h2>Features</h2>
+		<h2 class="features-heading">Features</h2>
 		<p>
 			Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks
 			sync between your devices so you can access them on the go.
 		</p>
 	</div>
-	<div>
+	<div class="btn-container">
 		{#each ['Simple Bookmarking', 'Speedy Searching', 'Easy Sharing'] as text}
 			<button on:click={() => handleClick(text)}>{text}</button>
 		{/each}
@@ -47,12 +49,50 @@
 		<div>
 			<img src="./images/{src}.svg" alt="" />
 		</div>
-		<div>
+		<div class="features-container">
 			<h2>{buttonText}</h2>
 			<p>
 				{paragraphText}
 			</p>
-			<button>More info</button>
 		</div>
+		<Button btn={'More Info'} />
 	</div>
 </div>
+
+<style>
+	.container {
+		text-align: center;
+		padding-top: 8.75rem;
+	}
+
+	.features-heading {
+		font-size: 1.5rem;
+		letter-spacing: -0.08px;
+		color: #242a45;
+	}
+
+	.btn-container {
+		display: flex;
+		flex-direction: column;
+		padding-top: 2.5rem;
+	}
+
+	.btn-container button {
+		border: none;
+		background-color: transparent;
+		font-family: 'Rubik', sans-serif;
+	}
+
+	.btn-container button:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	img {
+		padding-top: 4.5rem;
+	}
+
+	.features-container {
+		padding-top: 2rem;
+	}
+</style>

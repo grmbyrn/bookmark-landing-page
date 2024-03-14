@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Button from './Button.svelte';
+
 	let questions = [
 		{
 			id: 1,
@@ -30,7 +32,7 @@
 		}
 	];
 
-	function toggleAnswer(id) {
+	function toggleAnswer(id: number) {
 		questions = questions.map((q) => {
 			if (q.id === id) {
 				return { ...q, isOpen: !q.isOpen };
@@ -41,53 +43,74 @@
 	}
 </script>
 
-<div>
+<div class="container">
 	<h2>Frequently Asked Questions</h2>
 	<p>
 		Here are some of our FAQs. If you have any other questions you’d like answered please feel free
 		to email us.
 	</p>
 
-	{#each questions as question}
-		<div class="question">
-			<div class="question-header" on:click={() => toggleAnswer(question.id)}>
-				<h3>{question.question}</h3>
-				<button class:open={question.isOpen}>+</button>
+	<div class="question-container">
+		{#each questions as question}
+			<div class="question-content">
+				<button class="question-header" on:click={() => toggleAnswer(question.id)}>
+					<h3>{question.question}</h3>
+					<img class:open={question.isOpen} src="./images/icon-arrow.svg" alt="" />
+				</button>
 			</div>
 			{#if question.isOpen}
-				<p>{question.answer}</p>
+				<p class="answer">{question.answer}</p>
 			{/if}
-		</div>
-	{/each}
+		{/each}
+	</div>
+
+	<div class="btn-container">
+		<Button btn={'More Info'} />
+	</div>
 </div>
 
 <style>
-	.question {
-		margin-bottom: 20px;
+	.container {
+		padding-inline: 2rem;
+		text-align: center;
 	}
-	h1 {
-		font-size: 24px;
-		margin-bottom: 10px;
+
+	.question-container {
+		margin-top: 4rem;
 	}
-	h3 {
-		font-size: 18px;
-		margin-bottom: 5px;
+
+	.question-content {
+		border-bottom: 0.1px solid #979797;
+		padding-block: 12px;
 	}
+
 	.question-header {
 		display: flex;
+		flex-direction: row;
 		align-items: center;
+		justify-content: space-between;
+		width: 313px;
 		cursor: pointer;
+		border: none;
+		background-color: transparent;
 	}
-	.question-header button {
-		margin-left: 5px;
-		font-size: 16px;
-		font-weight: bold;
-		transition: transform 0.2s;
+
+	h3 {
+		font-size: 15px;
+		font-weight: 400;
 	}
-	.question-header button.open {
-		transform: rotate(45deg);
+
+	.question-header img.open {
+		transform: rotate(180deg);
 	}
-	p {
-		margin-top: 5px;
+
+	.answer {
+		margin-top: 1.5rem;
+		line-height: 30px;
+		text-align: left;
+	}
+
+	.btn-container {
+		margin-top: 3rem;
 	}
 </style>
