@@ -48,6 +48,7 @@
 	<div>
 		<div>
 			<img src="./images/{src}.svg" alt="" />
+			<div class="rectangle"></div>
 		</div>
 		<div class="features-container">
 			<h2>{buttonText}</h2>
@@ -63,12 +64,19 @@
 	.container {
 		text-align: center;
 		padding-top: 8.75rem;
+		margin-inline: 1.3rem;
 	}
 
 	.features-heading {
 		font-size: 1.5rem;
 		letter-spacing: -0.08px;
 		color: #242a45;
+	}
+
+	p {
+		color: #242a45;
+		font-size: 18px;
+		line-height: 28px;
 	}
 
 	.btn-container {
@@ -94,5 +102,16 @@
 
 	.features-container {
 		padding-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.rectangle {
+		width: 20rem;
+		z-index: -1;
+		background: #5267df;
+		height: 12.6875rem;
+		border-radius: 0 31.65rem 31.65rem 0;
+		margin-top: -10rem;
+		margin-left: -10rem;
 	}
 </style>

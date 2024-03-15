@@ -14,6 +14,5 @@
 		color: #ffffff;
 		font-family: 'Rubik', sans-serif;
 		padding: 10px 1.5rem;
-		margin-top: 15px;
 	}
 </style>

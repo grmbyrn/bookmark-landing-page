@@ -37,7 +37,6 @@
 		display: flex;
 		justify-content: space-between;
 		padding: 2.5rem;
-		background-color: pink;
 	}
 
 	ul {

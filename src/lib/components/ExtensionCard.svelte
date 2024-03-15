@@ -22,9 +22,14 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		margin: 0 auto;
 		align-items: center;
 		border-radius: 15px;
 		margin-block: 2.5rem;
+		box-shadow:
+			rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+			rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+		width: 280px;
 	}
 
 	.logo-img {
