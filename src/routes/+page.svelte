@@ -14,9 +14,9 @@
 	<Features />
 	<Extension />
 	<FAQ />
-	<Email />
-	<Footer />
 </div>
+<Email />
+<Footer />
 
 <style>
 	.container {

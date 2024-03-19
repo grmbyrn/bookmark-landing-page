@@ -5,7 +5,6 @@
 <div class="container">
 	<div class="image-container">
 		<img class="image" src="./images/illustration-hero.svg" alt="" />
-		<div class="rectangle"></div>
 	</div>
 	<h1>A Simple Bookmark Manager</h1>
 	<p>
@@ -13,7 +12,7 @@
 		your sites load instantly. Try it for free.
 	</p>
 	<div class="btn-container">
-		<Button btn={'Get it on Chrome'} />
+		<button class="btn-blue"> Get it on Chrome </button>
 		<button class="btn-grey"> Get it on Firefox </button>
 	</div>
 </div>
@@ -21,6 +20,7 @@
 <style>
 	.container {
 		margin-top: 5rem;
+		margin-inline: 2rem;
 	}
 
 	.rectangle {
@@ -51,6 +51,7 @@
 		display: flex;
 		justify-content: space-between;
 		padding-top: 2rem;
+		gap: 14px;
 	}
 
 	.btn-container button {
@@ -58,10 +59,17 @@
 		font-family: 'Rubik', sans-serif;
 		border-radius: 5px;
 		border: none;
+		font-size: 14px;
 	}
 
 	.btn-grey {
 		background-color: #f7f7f7;
 		color: #242a45;
+		border: 1px solid red;
+	}
+
+	.btn-blue {
+		background-color: #5267df;
+		color: #ffffff;
 	}
 </style>
